@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<!-- saved from url=(0069)file:///C:/Users/Usuario/Downloads/cv_con_foto%20(2).html#experiencia -->
-<html lang="es"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>CV — Alied Viviana Perdomo Payán</title>
 <style>
   :root{
@@ -72,11 +72,12 @@
     <div style="display:flex;align-items:center;gap:12px;flex-direction:column">
       <div class="photo">
         <!-- Imagen actualizada: el código intenta primero la ruta 'images/...' luego la misma carpeta que el HTML y por último 'foto.jpg' como fallback -->
-        <img id="profilePic" src="./CV — Alied Viviana Perdomo Payán_files/Imagen de WhatsApp 2025-05-26 a las 18.33.27_91f46f59.png" alt="Foto de Alied Viviana Perdomo" onerror="(function(img){
+        <img id="profilePic" src="images/Imagen de WhatsApp 2025-05-26 a las 18.33.27_91f46f59.png" alt="Foto de Alied Viviana Perdomo"
+             onerror="(function(img){
                try{
-                 if(img.src.indexOf(&#39;images/&#39;)!==-1){ img.src = &#39;Imagen de WhatsApp 2025-05-26 a las 18.33.27_91f46f59.png&#39;; return; }
-                 if(img.src.indexOf(&#39;Imagen de WhatsApp&#39;)!==-1){ img.onerror = null; img.src = &#39;foto.jpg&#39;; return; }
-               }catch(e){ img.onerror=null; img.src=&#39;foto.jpg&#39;; }
+                 if(img.src.indexOf('images/')!==-1){ img.src = 'Imagen de WhatsApp 2025-05-26 a las 18.33.27_91f46f59.png'; return; }
+                 if(img.src.indexOf('Imagen de WhatsApp')!==-1){ img.onerror = null; img.src = 'foto.jpg'; return; }
+               }catch(e){ img.onerror=null; img.src='foto.jpg'; }
              })(this)">
       </div>
       <div class="name">Alied Viviana<br>Perdomo Payán</div>
@@ -99,24 +100,24 @@
 
     <div class="section-title">Habilidades</div>
     <div class="skills">
-      <div class="skill"><div style="display:flex;justify-content:space-between"><strong>SQL &amp; Python</strong><span>85%</span></div><div class="bar"><i style="width:85%"></i></div></div>
+      <div class="skill"><div style="display:flex;justify-content:space-between"><strong>SQL & Python</strong><span>85%</span></div><div class="bar"><i style="width:85%"></i></div></div>
       <div class="skill"><div style="display:flex;justify-content:space-between"><strong>Comunicación</strong><span>90%</span></div><div class="bar"><i style="width:90%"></i></div></div>
       <div class="skill"><div style="display:flex;justify-content:space-between"><strong>Diseño de encuestas</strong><span>80%</span></div><div class="bar"><i style="width:80%"></i></div></div>
       <div class="skill"><div style="display:flex;justify-content:space-between"><strong>Microsoft Office</strong><span>95%</span></div><div class="bar"><i style="width:95%"></i></div></div>
     </div>
 
     <div class="download">
-      <a class="btn secondary" href="file:///C:/Users/Usuario/Downloads/cv_con_foto%20(2).html#" onclick="window.print();return false">Imprimir / Guardar</a>
+      <a class="btn secondary" href="#" onclick="window.print();return false">Imprimir / Guardar</a>
     </div>
 
   </aside>
 
   <main class="main">
     <nav class="navlinks" aria-label="Navegación del CV">
-      <a href="file:///C:/Users/Usuario/Downloads/cv_con_foto%20(2).html#perfil" class="active">Perfil</a>
-      <a href="file:///C:/Users/Usuario/Downloads/cv_con_foto%20(2).html#educacion">Educación</a>
-      <a href="file:///C:/Users/Usuario/Downloads/cv_con_foto%20(2).html#experiencia">Experiencia</a>
-      <a href="file:///C:/Users/Usuario/Downloads/cv_con_foto%20(2).html#habilidades">Habilidades</a>
+      <a href="#perfil" class="active">Perfil</a>
+      <a href="#educacion">Educación</a>
+      <a href="#experiencia">Experiencia</a>
+      <a href="#habilidades">Habilidades</a>
     </nav>
 
     <!-- Secciones del CV: se asegura que existan para evitar errores en JS -->
@@ -127,7 +128,7 @@
         Politóloga y Técnica en Sistemas con sólida formación en ciencias sociales e interés en la enseñanza y la investigación aplicada. Durante mi formación en Ciencia Política desarrollé un enfoque integral en ética y política, analizando la relación entre principios éticos, toma de decisiones públicas y responsabilidad social. He participado en proyectos de análisis de políticas públicas y de investigación social con enfoque territorial y participación ciudadana. Cuento con competencias en análisis de mercados, opinión pública, diseño de encuestas y análisis cualitativo, así como en el uso de herramientas tecnológicas para el aprendizaje. Mi perspectiva interdisciplinaria y pensamiento crítico me permiten abordar problemas sociales con rigor metodológico y compromiso con el bien común.
       </p>
     </section>
-    
+    </section>
 
     <section id="educacion" class="content-card" tabindex="0" style="margin-top:18px">
       <h2 class="cardtitle">Educación</h2>
@@ -270,4 +271,3 @@ document.addEventListener('DOMContentLoaded', ()=>{
     a.addEventListener('click', (e)=>{
       e.preventDefault();
       const id = (a.getAttribute('href
-</script></body></html>
