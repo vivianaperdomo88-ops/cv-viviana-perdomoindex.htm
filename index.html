@@ -10,92 +10,90 @@
     --bg2:#eef2f6;
     --accent:#2b4762;
     --muted:#546370;
+    --card:#ffffff;
   }
   *{box-sizing:border-box}
   body{
     margin:0;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
     background:linear-gradient(135deg,var(--bg1),var(--bg2));
     color:var(--accent);
     padding:24px;
   }
-  .stage{
-    max-width:1100px;margin:0 auto;
-    background:#fff;border-radius:12px;
-    box-shadow:0 20px 40px rgba(0,0,0,0.1);
-    display:grid;grid-template-columns:320px 1fr;
-    overflow:hidden;
-  }
-  /* ===== Sidebar ===== */
+  .stage{max-width:1100px;margin:0 auto;background:#fff;border-radius:12px;
+         box-shadow:0 20px 40px rgba(0,0,0,0.1);
+         display:grid;grid-template-columns:320px 1fr;overflow:hidden}
+
+  /* Sidebar */
   .sidebar{background:#f7f9fc;padding:28px}
   .photo{width:140px;height:140px;border-radius:50%;overflow:hidden;
-         box-shadow:0 6px 20px rgba(0,0,0,0.12);border:3px solid #fff;
-         margin:0 auto}
-  .photo img{width:100%;height:100%;object-fit:cover}
-  .name{text-align:center;margin-top:16px;font-size:20px;font-weight:700}
+         box-shadow:0 6px 20px rgba(0,0,0,0.12);border:3px solid #fff;margin:0 auto}
+  .photo img{width:100%;height:100%;object-fit:cover;border-radius:50%}
+  .name{margin-top:16px;font-size:20px;font-weight:700;text-align:center}
   .role{text-align:center;color:var(--muted);font-weight:600;margin-top:6px}
   .contact-list{margin-top:18px;font-size:15px}
   .contact-list a{color:var(--accent);text-decoration:none}
+  .pill{display:inline-block;background:#f1f5f9;padding:6px 10px;border-radius:999px;
+        margin:6px 6px 6px 0;font-weight:600;color:var(--accent);font-size:13px}
   .section-title{margin-top:20px;margin-bottom:10px;font-weight:700}
-  .pill{display:inline-block;background:#f1f5f9;padding:6px 10px;
-        border-radius:999px;margin:6px 6px 6px 0;font-weight:600;font-size:13px}
-  .download{margin-top:20px;display:flex;justify-content:center}
-  .btn{background:var(--accent);color:#fff;padding:10px 14px;border-radius:8px;
-       text-decoration:none;font-weight:700;cursor:pointer}
-  .btn.secondary{background:#fff;border:1px solid #dfe6eb;color:var(--accent)}
+  .download{margin-top:14px;display:flex;justify-content:center}
+  .btn{background:var(--accent);color:#fff;padding:10px 12px;border-radius:8px;
+       text-decoration:none;font-weight:700}
 
-  /* ===== Main ===== */
+  /* Main */
   .main{padding:28px}
-  .content-card{background:#fff;padding:20px;border-radius:10px;
-                border:1px solid #eef3f7;box-shadow:0 8px 20px rgba(34,60,80,0.04);
-                margin-bottom:20px}
+  .navlinks{display:flex;gap:10px;justify-content:center;margin-bottom:18px}
+  .navlinks a{color:var(--muted);text-decoration:none;padding:8px 14px;border-radius:8px;font-weight:700;transition:.18s}
+  .navlinks a.active,.navlinks a:hover{background:var(--accent);color:#fff}
+  .content-card{background:#fff;padding:20px;border-radius:10px;border:1px solid #eef3f7;box-shadow:0 8px 20px rgba(34,60,80,0.04);margin-bottom:20px}
   h2.cardtitle{font-size:18px;margin:0 0 10px;color:var(--accent)}
-  .card{background:#fff;border-radius:10px;padding:14px;border:1px solid #eef3f7;margin-top:10px}
+  .timeline{display:grid;gap:14px}
+  .card{background:#fff;border-radius:10px;padding:14px;border:1px solid #eef3f7}
   .meta{color:var(--muted);font-weight:600}
-  .achievements ul{margin:8px 0 0 18px}
+  .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 
-  @media print{
-    body{padding:0;background:#fff}
-    .stage{grid-template-columns:1fr;box-shadow:none;border-radius:0}
-    .sidebar{display:none}
-    .download{display:none}
-    .print-link{display:block;text-align:center;margin-top:30px;font-size:13px}
-  }
-  .print-link{display:none}
+  @media (max-width:980px){.stage{grid-template-columns:1fr}.sidebar{order:2}.main{order:1;padding:20px}}
+  @media print{body{padding:0;background:#fff}.navlinks,.download{display:none}.stage{box-shadow:none;border-radius:0}}
 </style>
 </head>
 <body>
 
 <div class="stage">
-  <!-- ===== Sidebar ===== -->
+  <!-- Sidebar -->
   <aside class="sidebar">
-    <div class="photo"><img src="foto.png" alt="Foto de Alied Viviana Perdomo"></div>
-    <div class="name">Alied Viviana<br>Perdomo Payán</div>
-    <div class="role">Politóloga · Técnica en Sistemas</div>
-
+    <div style="text-align:center">
+      <div class="photo"><img src="foto.jpg" alt="Foto de Alied Viviana Perdomo"></div>
+      <div class="name">Alied Viviana<br>Perdomo Payán</div>
+      <div class="role">Politóloga · Técnica en Sistemas</div>
+    </div>
     <div class="contact-list">
       <div><strong>📧</strong> <a href="mailto:vivianaperdomo88@gmail.com">vivianaperdomo88@gmail.com</a></div>
       <div><strong>📱</strong> <a href="https://wa.me/573165389974">+57 316 538 9974</a></div>
       <div><strong>💼</strong> <a href="https://www.linkedin.com/in/viviana-perdomo-713000293">linkedin.com/in/viviana-perdomo-713000293</a></div>
       <div><strong>📍</strong> Bogotá D.C., Colombia</div>
     </div>
-
     <div class="section-title">Etiquetas</div>
     <div>
       <span class="pill">Investigación</span>
-      <span class="pill">Políticas Públicas</span>
-      <span class="pill">Gestión</span>
+      <span class="pill">Adaptación Cultural</span>
+      <span class="pill">Salud Sexual y Reproductiva</span>
     </div>
-
     <div class="download">
       <a class="btn" href="#" onclick="window.print();return false">Imprimir / Guardar</a>
     </div>
   </aside>
 
-  <!-- ===== Main ===== -->
+  <!-- Main -->
   <main class="main">
+    <nav class="navlinks">
+      <a href="#perfil" class="active">Perfil</a>
+      <a href="#educacion">Educación</a>
+      <a href="#experiencia">Experiencia</a>
+      <a href="#habilidades">Habilidades</a>
+      <a href="#cvlink">CV Interactivo</a>
+    </nav>
 
-    <section class="content-card">
+    <section id="perfil" class="content-card">
       <h2 class="cardtitle">Perfil profesional</h2>
       <p>
         Politóloga con sólida formación en ciencias sociales y experiencia en investigación aplicada,
@@ -107,34 +105,7 @@
       </p>
     </section>
 
-    <section class="content-card">
-      <h2 class="cardtitle">Experiencia profesional</h2>
-      <div class="card">
-        <strong>Contraloría Municipal de Ibagué – Asistente de Planeación (Pasantía)</strong>
-        <div class="meta">Abril 2024 – Agosto 2024</div>
-        <ul>
-          <li>Consolidación de más de 15 informes de avance institucional.</li>
-          <li>Elaboración de informes de gestión trimestral.</li>
-          <li>Gestión y monitoreo de matrices de seguimiento de 20+ políticas y programas públicos.</li>
-          <li>Seguimiento de PQRSD (Formato 15) y gestión de archivo documental institucional.</li>
-          <li>Sistematización de evidencias del Plan de Participación Ciudadana.</li>
-          <li>Apoyo técnico en procesos de rendición de cuentas.</li>
-        </ul>
-      </div>
-      <div class="card">
-        <strong>Universidad del Tolima – Proyecto con Alcaldía de Ibagué – Asistente de Investigación</strong>
-        <div class="meta">Mayo 2023 – Diciembre 2023</div>
-        <ul>
-          <li>Diseño metodológico de investigación social aplicada con enfoque territorial.</li>
-          <li>Análisis territorial estratégico y mapeo de actores institucionales y comunitarios.</li>
-          <li>Definición de indicadores sociales para medición de impacto.</li>
-          <li>Propuesta de rutas metodológicas innovadoras con enfoque diferencial.</li>
-          <li>Generación de insumos técnicos estratégicos aplicados por la administración municipal.</li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="content-card">
+    <section id="educacion" class="content-card">
       <h2 class="cardtitle">Educación</h2>
       <ul>
         <li><strong>Universidad del Tolima</strong> – Ciencia Política — <em>Mayo 2025</em> (Énfasis en Políticas Públicas, Planeación Territorial y Participación Ciudadana)</li>
@@ -144,38 +115,88 @@
       </ul>
     </section>
 
-    <section class="content-card">
-      <h2 class="cardtitle">Habilidades y Herramientas</h2>
-      <h3>Habilidades técnicas</h3>
-      <ul>
-        <li>Investigación de mercados cualitativa y cuantitativa</li>
-        <li>Diseño de instrumentos de recolección (encuestas, guías, entrevistas, focus group)</li>
-        <li>Análisis de datos e interpretación de resultados</li>
-        <li>Redacción de informes ejecutivos y análisis estratégicos</li>
-        <li>Pensamiento crítico, escucha activa y lectura del lenguaje no verbal</li>
-        <li>Trabajo en equipo, comunicación asertiva y adaptabilidad</li>
-      </ul>
-      <h3>Herramientas</h3>
-      <ul>
-        <li>Microsoft Office (Excel avanzado, Word, PowerPoint)</li>
-        <li>Análisis de datos con SQL y Python (estadística aplicada)</li>
-        <li>Herramientas de investigación digital y bases de datos</li>
-        <li>Sistemas de información y gestión documental</li>
-      </ul>
+    <section id="experiencia" class="content-card">
+      <h2 class="cardtitle">Experiencia profesional</h2>
+      <div class="card">
+        <strong>Contraloría Municipal de Ibagué – Asistente de Planeación (Pasantía)</strong>
+        <div class="meta">Abril 2024 – Agosto 2024</div>
+        <ul>
+          <li>Consolidación de más de 15 informes de avance institucional con análisis estadístico.</li>
+          <li>Elaboración de informes de gestión trimestral y seguimiento de indicadores.</li>
+          <li>Sistematización de evidencias del Plan de Participación Ciudadana con enfoque diferencial.</li>
+          <li>Apoyo técnico en procesos de rendición de cuentas y transparencia.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <strong>Universidad del Tolima / Alcaldía de Ibagué – Asistente de Investigación</strong>
+        <div class="meta">Mayo 2023 – Diciembre 2023</div>
+        <ul>
+          <li>Diseño metodológico de investigación social aplicada con enfoque territorial.</li>
+          <li>Análisis territorial estratégico y mapeo de actores institucionales y comunitarios.</li>
+          <li>Definición de indicadores sociales para medición de impacto.</li>
+          <li>Propuesta de rutas metodológicas innovadoras con enfoque de género y diversidad cultural.</li>
+        </ul>
+      </div>
     </section>
 
-    <section class="content-card">
-      <h2 class="cardtitle">Referencias</h2>
-      <p><strong>María Fernanda Mellizo</strong><br>Contadora de gestión de finanzas<br>Contacto: 312 483 2626</p>
-      <p><strong>Yurani Ramírez Calderón</strong><br>Contadora<br>Contacto: 310 224 0334</p>
+    <section id="habilidades" class="content-card">
+      <h2 class="cardtitle">Competencias y herramientas</h2>
+      <div class="grid-2">
+        <div class="card">
+          <h3>Investigación y Análisis</h3>
+          <ul>
+            <li>Investigación cualitativa y cuantitativa</li>
+            <li>Diseño de instrumentos de recolección (encuestas, guías, entrevistas)</li>
+            <li>Análisis de datos e interpretación de resultados</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Comunicación y Gestión</h3>
+          <ul>
+            <li>Comunicación estratégica y redacción de informes ejecutivos</li>
+            <li>Gestión de políticas públicas y proyectos sociales</li>
+            <li>Participación ciudadana y enfoque territorial</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Herramientas técnicas</h3>
+          <ul>
+            <li>Microsoft Office (Excel avanzado, Word, PowerPoint)</li>
+            <li>Análisis de datos con SQL y Python</li>
+            <li>Sistemas de información y gestión documental</li>
+          </ul>
+        </div>
+      </div>
     </section>
 
-    <div class="print-link">
-      CV interactivo: <a href="https://vivianaperdomo88-ops.github.io/cv-viviana-perdomoindex.htm/" target="_blank">
-      https://vivianaperdomo88-ops.github.io/cv-viviana-perdomoindex.htm/</a>
-    </div>
+    <!-- NUEVO: Enlace al CV interactivo -->
+    <section id="cvlink" class="content-card">
+      <h2 class="cardtitle">CV interactivo en línea</h2>
+      <p>
+        Puedes ver esta hoja de vida en formato web en:  
+        <a href="https://tu-usuario.github.io/tu-repo/" target="_blank">
+          https://tu-usuario.github.io/tu-repo/
+        </a>
+      </p>
+    </section>
 
   </main>
 </div>
+
+<script>
+function updateActiveNav(){
+  const navLinks=document.querySelectorAll('.navlinks a');
+  const sections=document.querySelectorAll('main section');
+  const y=window.scrollY+140;
+  let current=sections[0].id;
+  sections.forEach(s=>{if(s.offsetTop<=y){current=s.id;}});
+  navLinks.forEach(a=>{
+    a.classList.toggle('active', a.getAttribute('href')==='#'+current);
+  });
+}
+window.addEventListener('scroll',updateActiveNav,{passive:true});
+window.addEventListener('resize',updateActiveNav);
+window.addEventListener('load',updateActiveNav);
+</script>
 </body>
 </html>
