@@ -20,76 +20,82 @@
     background: linear-gradient(135deg,var(--bg1) 0%, var(--bg2) 100%);
     color:var(--accent);
     -webkit-font-smoothing:antialiased;
-    -moz-osx-font-smoothing:grayscale;
     padding:24px;
   }
-  .stage{max-width:1100px;margin:0 auto;background:rgba(255,255,255,0.98);border-radius:12px;overflow:hidden;box-shadow:0 20px 40px rgba(0,0,0,0.10);display:grid;grid-template-columns:320px 1fr}
+  .stage{
+    max-width:1100px;
+    margin:0 auto;
+    background:rgba(255,255,255,0.98);
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 20px 40px rgba(0,0,0,0.10);
+    display:grid;
+    grid-template-columns:320px 1fr;
+  }
 
-  /* SIDEBAR */
-  .sidebar{background:linear-gradient(180deg,#ffffff,#f7f9fc);padding:28px;color:var(--accent)}
-  .photo{width:140px;height:140px;border-radius:50%;overflow:hidden;box-shadow:0 6px 20px rgba(0,0,0,0.12);border:3px solid #fff;background:#ddd; margin:0 auto;}
-  .photo img{width:100%;height:100%;object-fit:cover;object-position:center;border-radius:50%;display:block}
-  .name{margin-top:16px;font-size:20px;font-weight:700;color:var(--accent);text-align:center}
+  /* Sidebar */
+  .sidebar{background:linear-gradient(180deg,#ffffff,#f7f9fc);padding:28px}
+  .photo{width:140px;height:140px;border-radius:50%;overflow:hidden;
+         box-shadow:0 6px 20px rgba(0,0,0,0.12);border:3px solid #fff;
+         background:#ddd;margin:0 auto;}
+  .photo img{width:100%;height:100%;object-fit:cover;object-position:center}
+  .name{margin-top:16px;font-size:20px;font-weight:700;text-align:center}
   .role{color:var(--muted);margin-top:6px;font-weight:600;text-align:center}
-  .contact-list{margin-top:18px;font-size:15px;color:var(--accent)}
+  .contact-list{margin-top:18px;font-size:15px}
   .contact-list a{color:var(--accent);text-decoration:none}
-  .pill{display:inline-block;background:#f1f5f9;padding:6px 10px;border-radius:999px;margin:6px 6px 6px 0;font-weight:600;color:var(--accent);font-size:13px}
-  .section-title{margin-top:20px;margin-bottom:10px;color:var(--accent);font-weight:700}
-  .download{margin-top:14px;display:flex;gap:8px;justify-content:center}
-  .btn{background:var(--accent);color:#fff;padding:10px 12px;border-radius:8px;text-decoration:none;font-weight:700;display:inline-flex;align-items:center;gap:8px}
-  .btn.secondary{background:#fff;border:1px solid #dfe6eb;color:var(--accent)}
+  .pill{display:inline-block;background:#f1f5f9;padding:6px 10px;border-radius:999px;
+        margin:6px 6px 6px 0;font-weight:600;font-size:13px}
+  .section-title{margin-top:20px;margin-bottom:10px;font-weight:700}
 
-  /* MAIN */
-  .main{padding:28px;background:transparent}
+  /* Main */
+  .main{padding:28px}
   .navlinks{display:flex;gap:10px;justify-content:center;margin-bottom:18px;flex-wrap:wrap}
-  .navlinks a{color:var(--muted);text-decoration:none;padding:8px 14px;border-radius:8px;font-weight:700;transition:0.18s;cursor:pointer}
-  .navlinks a.active, .navlinks a:hover{background:var(--accent);color:#fff;transform:translateY(-1px)}
-
-  .content-card{background:#fff;padding:20px;border-radius:10px;border:1px solid #eef3f7;box-shadow:0 8px 20px rgba(34,60,80,0.04)}
-  .profile p{margin:0;color:#283845;line-height:1.6}
-
-  h2.cardtitle{font-size:18px;margin:0 0 10px 0;color:var(--accent)}
-  .timeline{display:grid;gap:14px}
-  .card{background:#fff;border-radius:10px;padding:14px;border:1px solid #eef3f7}
-  .meta{color:var(--muted);font-weight:600}
-  .achievements ul{margin:8px 0 0 18px;color:#333}
-
-  .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-
-  /* Show/hide sections */
+  .navlinks a{
+    color:var(--muted);text-decoration:none;padding:8px 14px;
+    border-radius:8px;font-weight:700;transition:0.18s;cursor:pointer;
+  }
+  .navlinks a.active,.navlinks a:hover{
+    background:var(--accent);color:#fff;transform:translateY(-1px)
+  }
+  .content-card{background:#fff;padding:20px;border-radius:10px;
+                border:1px solid #eef3f7;box-shadow:0 8px 20px rgba(34,60,80,0.04);
+                margin-bottom:20px}
   section{display:none}
   section.active{display:block}
 
-  @media (max-width:980px){.stage{grid-template-columns:1fr}.sidebar{order:2}.main{order:1;padding:20px}}
+  h2.cardtitle{font-size:18px;margin:0 0 10px 0;color:var(--accent)}
+  .card{background:#fff;border-radius:10px;padding:14px;border:1px solid #eef3f7;margin-top:10px}
+  .meta{color:var(--muted);font-weight:600}
+  .achievements ul{margin:8px 0 0 18px;color:#333}
+
+  /* Para impresión: mostrar TODO de corrido */
   @media print{
     body{padding:0;background:#fff}
-    .navlinks,.download{display:none}
-    .stage{box-shadow:none;border-radius:0;grid-template-columns:1fr}
-    /* ensure only the visible section prints */
-    section{display:none !important}
-    section.print-only{display:block !important}
-    /* show footer link */
-    .print-link{display:block;text-align:center;margin-top:30px;font-size:13px}
-    /* hide sidebar details to make printed page cleaner */
+    .navlinks{display:none}
+    .stage{grid-template-columns:1fr;box-shadow:none;border-radius:0}
     .sidebar{display:none}
+    section{display:block !important;page-break-inside:avoid}
+    .content-card{margin-bottom:24px}
+    .print-link{display:block;text-align:center;margin-top:40px;font-size:13px}
   }
   .print-link{display:none}
 </style>
 </head>
 <body>
 
-<div class="stage" role="main">
+<div class="stage">
+  <!-- ===== SIDEBAR ===== -->
   <aside class="sidebar">
     <div style="display:flex;align-items:center;gap:12px;flex-direction:column">
       <div class="photo">
-        <img id="profilePic" src="foto.png" alt="Foto de Alied Viviana Perdomo">
+        <img src="foto.png" alt="Foto de Alied Viviana Perdomo">
       </div>
       <div class="name">Alied Viviana<br>Perdomo Payán</div>
       <div class="role">Politóloga · Técnica en Sistemas</div>
     </div>
 
     <div class="contact-list">
-      <div style="margin-top:12px"><strong>📧</strong> <a href="mailto:vivianaperdomo88@gmail.com">vivianaperdomo88@gmail.com</a></div>
+      <div><strong>📧</strong> <a href="mailto:vivianaperdomo88@gmail.com">vivianaperdomo88@gmail.com</a></div>
       <div><strong>📱</strong> <a href="https://wa.me/573165389974" target="_blank">+57 316 538 9974</a></div>
       <div><strong>💼</strong> <a href="https://www.linkedin.com/in/viviana-perdomo-713000293" target="_blank">linkedin.com/in/viviana-perdomo-713000293</a></div>
       <div><strong>📍</strong> Bogotá D.C., Colombia</div>
@@ -101,27 +107,15 @@
       <span class="pill">Políticas Públicas</span>
       <span class="pill">Gestión</span>
     </div>
-
-    <div class="section-title">Habilidades</div>
-    <div style="margin-top:8px">
-      <div class="pill" style="padding:8px 12px">SQL & Python · 85%</div>
-      <div class="pill" style="padding:8px 12px">Comunicación · 90%</div>
-      <div class="pill" style="padding:8px 12px">Diseño de encuestas · 80%</div>
-      <div class="pill" style="padding:8px 12px">MS Office · 95%</div>
-    </div>
-
-    <div class="download">
-      <a class="btn secondary" href="#" onclick="window.print();return false">Imprimir / Guardar</a>
-    </div>
-
   </aside>
 
+  <!-- ===== MAIN ===== -->
   <main class="main">
     <nav class="navlinks" aria-label="Navegación del CV">
       <a data-target="perfil" class="active">Perfil</a>
       <a data-target="experiencia">Experiencia</a>
       <a data-target="educacion">Educación</a>
-      <a data-target="habilidades">Habilidades & Herramientas</a>
+      <a data-target="habilidades">Habilidades</a>
       <a data-target="referencias">Referencias</a>
     </nav>
 
@@ -131,152 +125,108 @@
       <p>
         Politóloga con sólida formación en ciencias sociales y experiencia en investigación aplicada, análisis de políticas públicas y procesos de participación ciudadana. Poseo competencias para adaptar y contextualizar contenidos sociales y educativos a diversos territorios y culturas, integrando enfoques de género, derechos humanos y salud pública. Mi trabajo combina rigor metodológico, perspectiva ética y sensibilidad cultural, esenciales para proyectos de salud sexual y reproductiva en contextos latinoamericanos.
       </p>
-      <div style="margin-top:12px;color:#283845">
-        <strong>Áreas de interés:</strong> Adaptación cultural de contenidos, salud sexual y reproductiva, participación ciudadana, políticas públicas territoriales, enfoque de género y derechos humanos.
-      </div>
     </section>
 
     <!-- EXPERIENCIA -->
     <section id="experiencia" class="content-card">
       <h2 class="cardtitle">Experiencia profesional</h2>
-
-      <div class="card" style="margin-bottom:12px">
+      <div class="card">
         <strong>Contraloría Municipal de Ibagué – Asistente de Planeación (Pasantía)</strong>
         <div class="meta">Abril 2024 – Agosto 2024</div>
-        <div class="achievements">
-          <ul>
-            <li>Consolidación de más de 15 informes de avance institucional.</li>
-            <li>Elaboración de informes de gestión trimestral.</li>
-            <li>Gestión y monitoreo de matrices de seguimiento de 20+ políticas y programas públicos.</li>
-            <li>Seguimiento de PQRSD (Formato 15) y gestión de archivo documental institucional.</li>
-            <li>Sistematización de evidencias del Plan de Participación Ciudadana.</li>
-            <li>Apoyo técnico en procesos de rendición de cuentas.</li>
-          </ul>
-        </div>
+        <ul>
+          <li>Consolidación de más de 15 informes de avance institucional.</li>
+          <li>Elaboración de informes de gestión trimestral.</li>
+          <li>Gestión y monitoreo de matrices de seguimiento de 20+ políticas y programas públicos.</li>
+          <li>Seguimiento de PQRSD (Formato 15) y gestión de archivo documental institucional.</li>
+          <li>Sistematización de evidencias del Plan de Participación Ciudadana.</li>
+          <li>Apoyo técnico en procesos de rendición de cuentas.</li>
+        </ul>
       </div>
 
       <div class="card">
         <strong>Universidad del Tolima – Proyecto con Alcaldía de Ibagué – Asistente de Investigación</strong>
         <div class="meta">Mayo 2023 – Diciembre 2023</div>
-        <div class="achievements">
-          <ul>
-            <li>Diseño metodológico de investigación social aplicada con enfoque territorial.</li>
-            <li>Análisis territorial estratégico y mapeo comprehensivo de actores institucionales y comunitarios.</li>
-            <li>Definición técnica de indicadores sociales para medición de impacto.</li>
-            <li>Propuesta de rutas metodológicas innovadoras con enfoque diferencial.</li>
-            <li>Generación de insumos técnicos estratégicos aplicados por la administración municipal.</li>
-          </ul>
-        </div>
+        <ul>
+          <li>Diseño metodológico de investigación social aplicada con enfoque territorial.</li>
+          <li>Análisis territorial estratégico y mapeo de actores institucionales y comunitarios.</li>
+          <li>Definición de indicadores sociales para medición de impacto.</li>
+          <li>Propuesta de rutas metodológicas innovadoras con enfoque diferencial.</li>
+          <li>Generación de insumos técnicos estratégicos aplicados por la administración municipal.</li>
+        </ul>
       </div>
     </section>
 
     <!-- EDUCACION -->
     <section id="educacion" class="content-card">
       <h2 class="cardtitle">Educación</h2>
-      <div class="timeline">
-        <div class="card">
-          <strong>Universidad del Tolima</strong>
-          <div class="meta">Ciencia Política — Mayo 2025</div>
-          <div style="margin-top:8px;color:#283845"><em>Énfasis en Políticas Públicas, Planeación Territorial y Participación Ciudadana</em></div>
-        </div>
-
-        <div class="card grid-2" style="align-items:center">
-          <div>
-            <strong>CENSA</strong>
-            <div class="meta">Curso de Economía (Virtual) — Mayo 2020</div>
-          </div>
-          <div>
-            <strong>SENA</strong>
-            <div class="meta">Técnico en Sistemas — Diciembre 2018</div>
-          </div>
-        </div>
-
-        <div class="card">
-          <strong>I.E.T. Medalla Milagrosa</strong>
-          <div class="meta">Bachiller Académico — Diciembre 2018</div>
-        </div>
-      </div>
+      <ul>
+        <li><strong>Universidad del Tolima</strong> – Ciencia Política, Énfasis en Políticas Públicas, Planeación Territorial y Participación Ciudadana — <em>Mayo 2025</em></li>
+        <li><strong>CENSA</strong> – Curso de Economía (Virtual) — <em>Mayo 2020</em></li>
+        <li><strong>SENA</strong> – Técnico en Sistemas — <em>Diciembre 2018</em></li>
+        <li><strong>I.E.T. Medalla Milagrosa</strong> – Bachiller Académico — <em>Diciembre 2018</em></li>
+      </ul>
     </section>
 
-    <!-- HABILIDADES Y HERRAMIENTAS -->
+    <!-- HABILIDADES -->
     <section id="habilidades" class="content-card">
-      <h2 class="cardtitle">Habilidades técnicas y herramientas</h2>
-
-      <div style="margin-top:8px">
-        <h3 style="margin:0 0 8px 0">Habilidades técnicas</h3>
-        <ul style="margin-left:18px;color:#283845">
-          <li>Investigación de mercados cualitativa y cuantitativa.</li>
-          <li>Diseño de instrumentos de recolección (encuestas, guías, entrevistas, focus group).</li>
-          <li>Análisis de datos, interpretación de resultados y generación de insights.</li>
-          <li>Redacción y entrega de informes ejecutivos y análisis estratégicos.</li>
-          <li>Pensamiento crítico, escucha activa y lectura del lenguaje no verbal.</li>
-          <li>Trabajo en equipo, comunicación asertiva y adaptabilidad institucional.</li>
-        </ul>
-
-        <h3 style="margin:12px 0 8px 0">Herramientas técnicas</h3>
-        <ul style="margin-left:18px;color:#283845">
-          <li>Microsoft Office (Excel avanzado, Word, PowerPoint).</li>
-          <li>Análisis de datos con SQL y Python (estadística aplicada).</li>
-          <li>Herramientas de investigación digital y bases de datos.</li>
-          <li>Sistemas de información y gestión documental.</li>
-        </ul>
-      </div>
-
-      <h3 style="margin-top:12px">Competencias clave</h3>
-      <ul style="margin-left:18px;color:#283845">
-        <li>Adaptación cultural de contenidos sociales y educativos (especialmente en salud sexual y reproductiva).</li>
-        <li>Gestión de proyectos sociales e innovación social.</li>
-        <li>Comunicación estratégica y educación comunitaria.</li>
-        <li>Participación ciudadana y análisis territorial.</li>
-        <li>Metodologías de investigación aplicada para impacto social.</li>
+      <h2 class="cardtitle">Habilidades y Herramientas</h2>
+      <h3>Habilidades técnicas</h3>
+      <ul>
+        <li>Investigación de mercados cualitativa y cuantitativa</li>
+        <li>Diseño de instrumentos de recolección (encuestas, guías, entrevistas, focus group)</li>
+        <li>Análisis de datos, interpretación de resultados y generación de insights</li>
+        <li>Redacción de informes ejecutivos y análisis estratégicos</li>
+        <li>Pensamiento crítico, escucha activa y lectura del lenguaje no verbal</li>
+        <li>Trabajo en equipo, comunicación asertiva y adaptabilidad</li>
+      </ul>
+      <h3>Herramientas técnicas</h3>
+      <ul>
+        <li>Microsoft Office (Excel avanzado, Word, PowerPoint)</li>
+        <li>Análisis de datos con SQL y Python (estadística aplicada)</li>
+        <li>Herramientas de investigación digital y bases de datos</li>
+        <li>Sistemas de información y gestión documental</li>
+      </ul>
+      <h3>Competencias clave</h3>
+      <ul>
+        <li>Adaptación cultural de contenidos sociales y educativos (especialmente en salud sexual y reproductiva)</li>
+        <li>Gestión de proyectos sociales e innovación social</li>
+        <li>Comunicación estratégica y educación comunitaria</li>
+        <li>Participación ciudadana y análisis territorial</li>
+        <li>Metodologías de investigación aplicada para impacto social</li>
       </ul>
     </section>
 
     <!-- REFERENCIAS -->
     <section id="referencias" class="content-card">
       <h2 class="cardtitle">Referencias</h2>
-      <div style="margin-top:8px;color:#283845">
-        <p><strong>María Fernanda Mellizo</strong><br>Contadora de gestión de finanzas<br>Contacto: <a href="tel:3124832626">312 483 2626</a></p>
-        <p><strong>Yurani Ramírez Calderón</strong><br>Contadora<br>Contacto: <a href="tel:3102240334">310 224 0334</a></p>
-      </div>
+      <p><strong>María Fernanda Mellizo</strong><br>Contadora de gestión de finanzas<br>Contacto: 312 483 2626</p>
+      <p><strong>Yurani Ramírez Calderón</strong><br>Contadora<br>Contacto: 310 224 0334</p>
     </section>
 
-    <!-- Link para imprimir (saldrá en PDF) -->
     <div class="print-link">
-      CV interactivo: <a href="https://vivianaperdomo88-ops.github.io/cv-viviana-perdomoindex.htm/" target="_blank">https://vivianaperdomo88-ops.github.io/cv-viviana-perdomoindex.htm/</a>
+      CV interactivo: <a href="https://vivianaperdomo88-ops.github.io/cv-viviana-perdomoindex.htm/" target="_blank">
+      https://vivianaperdomo88-ops.github.io/cv-viviana-perdomoindex.htm/</a>
     </div>
 
   </main>
 </div>
 
 <script>
-  // pestañas: mostrar solo la sección seleccionada
+  // pestañas en pantalla
   const navLinks = document.querySelectorAll('.navlinks a');
   const sections = document.querySelectorAll('main section');
 
   function showSection(id){
-    sections.forEach(s=>{
-      s.classList.toggle('active', s.id === id);
-      // para impresión: marcar también como print-only la sección activa
-      s.classList.toggle('print-only', s.id === id);
-    });
+    sections.forEach(s=>s.classList.toggle('active', s.id === id));
     navLinks.forEach(l=> l.classList.toggle('active', l.dataset.target === id));
-    // scroll top de la sección visible (útil en móviles)
-    const visible = document.getElementById(id);
-    if(visible) visible.scrollIntoView({behavior:'smooth',block:'start'});
   }
-
   navLinks.forEach(link=>{
-    link.addEventListener('click', (e)=>{
+    link.addEventListener('click', e=>{
       e.preventDefault();
-      const id = link.dataset.target;
-      showSection(id);
+      showSection(link.dataset.target);
     });
   });
-
-  // inicial: mostrar 'perfil'
   showSection('perfil');
 </script>
 </body>
 </html>
-
