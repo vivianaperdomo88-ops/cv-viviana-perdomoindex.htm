@@ -10,49 +10,46 @@
     --bg2:#eef2f6;
     --accent:#2b4762;
     --muted:#546370;
-    --card:#ffffff;
   }
   *{box-sizing:border-box}
-  html{scroll-behavior:smooth}
   body{
     margin:0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg,var(--bg1) 0%, var(--bg2) 100%);
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background:linear-gradient(135deg,var(--bg1),var(--bg2));
     color:var(--accent);
-    -webkit-font-smoothing:antialiased;
     padding:24px;
   }
   .stage{
-    max-width:1100px;
-    margin:0 auto;
-    background:rgba(255,255,255,0.98);
-    border-radius:12px;
+    max-width:1100px;margin:0 auto;
+    background:#fff;border-radius:12px;
+    box-shadow:0 20px 40px rgba(0,0,0,0.1);
+    display:grid;grid-template-columns:320px 1fr;
     overflow:hidden;
-    box-shadow:0 20px 40px rgba(0,0,0,0.10);
-    display:grid;
-    grid-template-columns:320px 1fr;
   }
-
-  /* Sidebar */
-  .sidebar{background:linear-gradient(180deg,#ffffff,#f7f9fc);padding:28px}
+  /* ===== Sidebar ===== */
+  .sidebar{background:#f7f9fc;padding:28px}
   .photo{width:140px;height:140px;border-radius:50%;overflow:hidden;
          box-shadow:0 6px 20px rgba(0,0,0,0.12);border:3px solid #fff;
-         background:#ddd;margin:0 auto;}
-  .photo img{width:100%;height:100%;object-fit:cover;object-position:center}
-  .name{margin-top:16px;font-size:20px;font-weight:700;text-align:center}
-  .role{color:var(--muted);margin-top:6px;font-weight:600;text-align:center}
+         margin:0 auto}
+  .photo img{width:100%;height:100%;object-fit:cover}
+  .name{text-align:center;margin-top:16px;font-size:20px;font-weight:700}
+  .role{text-align:center;color:var(--muted);font-weight:600;margin-top:6px}
   .contact-list{margin-top:18px;font-size:15px}
   .contact-list a{color:var(--accent);text-decoration:none}
-  .pill{display:inline-block;background:#f1f5f9;padding:6px 10px;border-radius:999px;
-        margin:6px 6px 6px 0;font-weight:600;font-size:13px}
   .section-title{margin-top:20px;margin-bottom:10px;font-weight:700}
+  .pill{display:inline-block;background:#f1f5f9;padding:6px 10px;
+        border-radius:999px;margin:6px 6px 6px 0;font-weight:600;font-size:13px}
+  .download{margin-top:20px;display:flex;justify-content:center;gap:8px}
+  .btn{background:var(--accent);color:#fff;padding:10px 14px;border-radius:8px;
+       text-decoration:none;font-weight:700;cursor:pointer}
+  .btn.secondary{background:#fff;border:1px solid #dfe6eb;color:var(--accent)}
 
-  /* Main */
+  /* ===== Main ===== */
   .main{padding:28px}
   .navlinks{display:flex;gap:10px;justify-content:center;margin-bottom:18px;flex-wrap:wrap}
   .navlinks a{
     color:var(--muted);text-decoration:none;padding:8px 14px;
-    border-radius:8px;font-weight:700;transition:0.18s;cursor:pointer;
+    border-radius:8px;font-weight:700;cursor:pointer;transition:.18s;
   }
   .navlinks a.active,.navlinks a:hover{
     background:var(--accent);color:#fff;transform:translateY(-1px)
@@ -62,20 +59,19 @@
                 margin-bottom:20px}
   section{display:none}
   section.active{display:block}
-
-  h2.cardtitle{font-size:18px;margin:0 0 10px 0;color:var(--accent)}
+  h2.cardtitle{font-size:18px;margin:0 0 10px;color:var(--accent)}
   .card{background:#fff;border-radius:10px;padding:14px;border:1px solid #eef3f7;margin-top:10px}
   .meta{color:var(--muted);font-weight:600}
-  .achievements ul{margin:8px 0 0 18px;color:#333}
+  .achievements ul{margin:8px 0 0 18px}
 
-  /* Para impresión: mostrar TODO de corrido */
+  /* ===== Print: mostrar todo en una sola página ===== */
   @media print{
     body{padding:0;background:#fff}
     .navlinks{display:none}
     .stage{grid-template-columns:1fr;box-shadow:none;border-radius:0}
     .sidebar{display:none}
     section{display:block !important;page-break-inside:avoid}
-    .content-card{margin-bottom:24px}
+    .download{display:none}   /* ocultar los botones dentro del PDF */
     .print-link{display:block;text-align:center;margin-top:40px;font-size:13px}
   }
   .print-link{display:none}
@@ -84,20 +80,16 @@
 <body>
 
 <div class="stage">
-  <!-- ===== SIDEBAR ===== -->
+  <!-- SIDEBAR -->
   <aside class="sidebar">
-    <div style="display:flex;align-items:center;gap:12px;flex-direction:column">
-      <div class="photo">
-        <img src="foto.png" alt="Foto de Alied Viviana Perdomo">
-      </div>
-      <div class="name">Alied Viviana<br>Perdomo Payán</div>
-      <div class="role">Politóloga · Técnica en Sistemas</div>
-    </div>
+    <div class="photo"><img src="foto.png" alt="Foto de Alied Viviana Perdomo"></div>
+    <div class="name">Alied Viviana<br>Perdomo Payán</div>
+    <div class="role">Politóloga · Técnica en Sistemas</div>
 
     <div class="contact-list">
       <div><strong>📧</strong> <a href="mailto:vivianaperdomo88@gmail.com">vivianaperdomo88@gmail.com</a></div>
-      <div><strong>📱</strong> <a href="https://wa.me/573165389974" target="_blank">+57 316 538 9974</a></div>
-      <div><strong>💼</strong> <a href="https://www.linkedin.com/in/viviana-perdomo-713000293" target="_blank">linkedin.com/in/viviana-perdomo-713000293</a></div>
+      <div><strong>📱</strong> <a href="https://wa.me/573165389974">+57 316 538 9974</a></div>
+      <div><strong>💼</strong> <a href="https://www.linkedin.com/in/viviana-perdomo-713000293">linkedin.com/in/viviana-perdomo-713000293</a></div>
       <div><strong>📍</strong> Bogotá D.C., Colombia</div>
     </div>
 
@@ -107,11 +99,15 @@
       <span class="pill">Políticas Públicas</span>
       <span class="pill">Gestión</span>
     </div>
+
+    <div class="download">
+      <a class="btn" href="#" onclick="window.print();return false">Imprimir / Guardar</a>
+    </div>
   </aside>
 
-  <!-- ===== MAIN ===== -->
+  <!-- MAIN -->
   <main class="main">
-    <nav class="navlinks" aria-label="Navegación del CV">
+    <nav class="navlinks">
       <a data-target="perfil" class="active">Perfil</a>
       <a data-target="experiencia">Experiencia</a>
       <a data-target="educacion">Educación</a>
@@ -119,15 +115,11 @@
       <a data-target="referencias">Referencias</a>
     </nav>
 
-    <!-- PERFIL -->
     <section id="perfil" class="content-card active">
       <h2 class="cardtitle">Perfil profesional</h2>
-      <p>
-        Politóloga con sólida formación en ciencias sociales y experiencia en investigación aplicada, análisis de políticas públicas y procesos de participación ciudadana. Poseo competencias para adaptar y contextualizar contenidos sociales y educativos a diversos territorios y culturas, integrando enfoques de género, derechos humanos y salud pública. Mi trabajo combina rigor metodológico, perspectiva ética y sensibilidad cultural, esenciales para proyectos de salud sexual y reproductiva en contextos latinoamericanos.
-      </p>
+      <p>Politóloga con sólida formación en ciencias sociales y experiencia en investigación aplicada, análisis de políticas públicas y procesos de participación ciudadana. Poseo competencias para adaptar y contextualizar contenidos sociales y educativos a diversos territorios y culturas, integrando enfoques de género, derechos humanos y salud pública. Mi trabajo combina rigor metodológico, perspectiva ética y sensibilidad cultural, esenciales para proyectos de salud sexual y reproductiva en contextos latinoamericanos.</p>
     </section>
 
-    <!-- EXPERIENCIA -->
     <section id="experiencia" class="content-card">
       <h2 class="cardtitle">Experiencia profesional</h2>
       <div class="card">
@@ -156,47 +148,36 @@
       </div>
     </section>
 
-    <!-- EDUCACION -->
     <section id="educacion" class="content-card">
       <h2 class="cardtitle">Educación</h2>
       <ul>
-        <li><strong>Universidad del Tolima</strong> – Ciencia Política, Énfasis en Políticas Públicas, Planeación Territorial y Participación Ciudadana — <em>Mayo 2025</em></li>
+        <li><strong>Universidad del Tolima</strong> – Ciencia Política — <em>Mayo 2025</em> (Énfasis en Políticas Públicas, Planeación Territorial y Participación Ciudadana)</li>
         <li><strong>CENSA</strong> – Curso de Economía (Virtual) — <em>Mayo 2020</em></li>
         <li><strong>SENA</strong> – Técnico en Sistemas — <em>Diciembre 2018</em></li>
         <li><strong>I.E.T. Medalla Milagrosa</strong> – Bachiller Académico — <em>Diciembre 2018</em></li>
       </ul>
     </section>
 
-    <!-- HABILIDADES -->
     <section id="habilidades" class="content-card">
       <h2 class="cardtitle">Habilidades y Herramientas</h2>
       <h3>Habilidades técnicas</h3>
       <ul>
         <li>Investigación de mercados cualitativa y cuantitativa</li>
         <li>Diseño de instrumentos de recolección (encuestas, guías, entrevistas, focus group)</li>
-        <li>Análisis de datos, interpretación de resultados y generación de insights</li>
+        <li>Análisis de datos e interpretación de resultados</li>
         <li>Redacción de informes ejecutivos y análisis estratégicos</li>
         <li>Pensamiento crítico, escucha activa y lectura del lenguaje no verbal</li>
         <li>Trabajo en equipo, comunicación asertiva y adaptabilidad</li>
       </ul>
-      <h3>Herramientas técnicas</h3>
+      <h3>Herramientas</h3>
       <ul>
         <li>Microsoft Office (Excel avanzado, Word, PowerPoint)</li>
         <li>Análisis de datos con SQL y Python (estadística aplicada)</li>
         <li>Herramientas de investigación digital y bases de datos</li>
         <li>Sistemas de información y gestión documental</li>
       </ul>
-      <h3>Competencias clave</h3>
-      <ul>
-        <li>Adaptación cultural de contenidos sociales y educativos (especialmente en salud sexual y reproductiva)</li>
-        <li>Gestión de proyectos sociales e innovación social</li>
-        <li>Comunicación estratégica y educación comunitaria</li>
-        <li>Participación ciudadana y análisis territorial</li>
-        <li>Metodologías de investigación aplicada para impacto social</li>
-      </ul>
     </section>
 
-    <!-- REFERENCIAS -->
     <section id="referencias" class="content-card">
       <h2 class="cardtitle">Referencias</h2>
       <p><strong>María Fernanda Mellizo</strong><br>Contadora de gestión de finanzas<br>Contacto: 312 483 2626</p>
@@ -212,13 +193,11 @@
 </div>
 
 <script>
-  // pestañas en pantalla
   const navLinks = document.querySelectorAll('.navlinks a');
   const sections = document.querySelectorAll('main section');
-
   function showSection(id){
-    sections.forEach(s=>s.classList.toggle('active', s.id === id));
-    navLinks.forEach(l=> l.classList.toggle('active', l.dataset.target === id));
+    sections.forEach(s=>s.classList.toggle('active', s.id===id));
+    navLinks.forEach(l=>l.classList.toggle('active', l.dataset.target===id));
   }
   navLinks.forEach(link=>{
     link.addEventListener('click', e=>{
